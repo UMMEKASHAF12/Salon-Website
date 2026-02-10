@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+.input-style {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: 1px solid #e5e5e5;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-style:focus {
+  border-color: rgb(90, 14, 36);
+  box-shadow: 0 0 0 2px rgba(90, 14, 36, 0.15);
+}
