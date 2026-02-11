@@ -1,83 +1,70 @@
 import React, { useState } from "react";
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    return (
-        <nav
-            style={{ backgroundColor: "rgb(90, 14, 36)" }}
-            className="shadow-lg p-0"
-        >
+  const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Gallery", href: "#gallery" },
+    { name: "Contact", href: "#appointment" },
+  ];
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-16 items-center">
+  return (
+    <nav className="fixed w-full bg-[rgb(90,14,36)] shadow-lg z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16 items-center">
+          <h1
+            style={{ fontFamily: "'Great Vibes', cursive" }}
+            className="text-xl md:text-3xl text-white tracking-wide"
+          >
+            Zakia Rukia Salon
+          </h1>
 
-                    <h1
-  style={{ fontFamily: "'Great Vibes', cursive" }}
-  className="text-xl md:text-3xl text-white tracking-wide"
->
-  Zakia Rukia Salon
-</h1>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-white relative group font-medium"
+              >
+                {link.name}
+                {/* underline animation */}
+                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
+              </a>
+            ))}
+          </div>
 
-                    {/* Menu - Desktop */}
-                    <div className="hidden md:flex space-x-8">
-                        <a href="#" className="text-white hover:text-pink-900 font-medium">
-                            Home
-                        </a>
-                        <a href="#" className="text-white hover:text-pink-900 font-medium">
-                            Services
-                        </a>
-                        <a href="#" className="text-white hover:text-pink-900 font-medium">
-                            Gallery
-                        </a>
-                        <a href="#" className="text-white hover:text-pink-900 font-medium">
-                            About
-                        </a>
-                        <a href="#" className="text-white hover:text-pink-900 font-medium">
-                            Contact
-                        </a>
-                    </div>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white focus:outline-none text-2xl"
+            >
+              {isOpen ? "✖" : "☰"}
+            </button>
+          </div>
+        </div>
+      </div>
 
-                    {/* Mobile Menu Button */}
-                    <div className="md:hidden">
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="text-pink-700 focus:outline-none"
-                        >
-                            {isOpen ? (
-                                <span className="text-2xl">&#10005;</span> // Cross
-                            ) : (
-                                <span className="text-2xl">&#9776;</span> // Hamburger
-                            )}
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden bg-pink-50 px-4 pt-2 pb-4 space-y-2">
-                    <a href="#" className="block text-pink-700 hover:text-pink-900 font-medium">
-                        Home
-                    </a>
-                    <a href="#" className="block text-pink-700 hover:text-pink-900 font-medium">
-                        Services
-                    </a>
-                    <a href="#" className="block text-pink-700 hover:text-pink-900 font-medium">
-                        Gallery
-                    </a>
-                    <a href="#" className="block text-pink-700 hover:text-pink-900 font-medium">
-                        About
-                    </a>
-                    <a href="#" className="block text-pink-700 hover:text-pink-900 font-medium">
-                        Contact
-                    </a>
-                </div>
-            )}
-        </nav>
-    );
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-pink-50 px-4 pt-2 pb-4 space-y-2">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="block text-pink-700 hover:text-pink-900 font-medium"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+      )}
+    </nav>
+  );
 };
 
 export default Navbar;
-
-

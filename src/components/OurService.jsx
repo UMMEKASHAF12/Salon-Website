@@ -1,15 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
+import g6 from "../assets/gallery/g6.jpg";
+import g4 from "../assets/gallery/g4.jpg";
+import g7 from "../assets/gallery/g7.jpg";
+import g8 from "../assets/gallery/g8.jpg";
 
 const services = [
-  { name: "Body", img: "/services/body.jpg" },
-  { name: "Massages", img: "/services/massages.jpg" },
-  { name: "Spa Packages", img: "/services/spa.jpg" },
-  { name: "Couples", img: "/services/couples.jpg" },
-  { name: "IV Therapy", img: "/services/iv.jpg" },
-  { name: "Microblading", img: "/services/microblading.jpg" },
-  { name: "Gift Cards", img: "/services/gift.jpg" },
-  { name: "Our Products", img: "/services/products.jpg" },
+  { name: "Baraat Makeup", img: g6 },
+  { name: "Mehndi Makeup", img: g4 },
+  { name: "Party Makeup ", img: g7 },
+  { name: "Glamourous Makeup", img: g8 },
+ 
 ];
 
 const OurServices = () => {
