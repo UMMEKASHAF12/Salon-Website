@@ -51,12 +51,12 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-pink-50 px-4 pt-2 pb-4 space-y-2">
+        <div className="md:hidden bg-[rgb(90,14,36)] px-4 pt-2 pb-4 space-y-2">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="block text-pink-700 hover:text-pink-900 font-medium"
+              className="block text-white font-medium"
             >
               {link.name}
             </a>
